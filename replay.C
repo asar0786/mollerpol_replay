@@ -11,6 +11,8 @@ void replay(int run_number=0, int nevents=-1){
   gSystem->Load("libMollerPol");
 
   MollerPolApparatus *mol = new MollerPolApparatus("M", "Moller polarimeter apparatus");
+  gHaApps->Add(mol);
+  mol->AddDetector( new MollerPolHelicityDecoderBoard("heldecoder", "Helicity Decoder Module") );
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -19,14 +21,14 @@ void replay(int run_number=0, int nevents=-1){
   // and executes the output routines.
   THaAnalyzer* analyzer = new THaAnalyzer;
   
-  gHaApps->Add(mol);
+
 
   // Add event handler for scaler events
   MollerPolScalerEvtHandler* scaler = new MollerPolScalerEvtHandler("M", "scaler event type 1");
   scaler->AddEvtType(1);
   gHaEvtHandlers->Add(scaler);
   scaler->SetDebugFile("DebugScaler.txt");
-  
+  //
   // A simple event class to be output to the resulting tree.
   // Creating your own descendant of THaEvent is one way of
   // defining and controlling the output.
@@ -34,8 +36,9 @@ void replay(int run_number=0, int nevents=-1){
   
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-//  THaRun* run = new THaRun( "prod12_4100V_TrigRate25_4.dat" );
   THaRun* run = new THaRun( Form("raw/fadcV2_%d.evio.0",run_number) );
+
+  //old run define
   run->SetLastEvent(nevents);
 
   run->SetDataRequired(0);
@@ -45,7 +48,6 @@ void replay(int run_number=0, int nevents=-1){
   analyzer->SetOdefFile("replay.odef" );
   
   // Define the analysis parameters
-  analyzer->SetEvent( event );
   analyzer->SetOutFile( Form("Rootfiles/fadcV2_moller_analyzer_%d.root", run_number) );
   // File to record cuts accounting information
   analyzer->SetSummaryFile( Form("summary_%d.log", run_number) ); // optional

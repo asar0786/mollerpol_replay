@@ -3,4 +3,5 @@ TSROC 1
 ==== Crate 1 type vme
 # slot   model   bank   configuration string (optional)
   3      250     250 
+  14    3564    3564   # helicity decoder board
   22    9250    9250 
