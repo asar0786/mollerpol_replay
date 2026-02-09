@@ -18,3 +18,8 @@ This points to the replay data base.
 ```
 analyzer "replay.C(run_number[,number of events])"
 ```
+# To run replay_polgem_segments.C
+```
+source setenv.csh
+analyzer 'replay_polgem_segments.C(run_number, "DATA_DIR", first seg, last seg, first event, last event(-1:all), "OUT_DIR")'
+```
