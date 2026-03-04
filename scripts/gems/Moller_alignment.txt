@@ -1,9 +1,4 @@
-#/lustre24/expphy/volatile/halla/moller12gev/zdemirog/Rootfiles/moller_uvagem_replayed_1992_aligned_seg0_1.root
-#/volatile/halla/moller12gev/zdemirog/Rootfiles/moller_uvagem_replayed_1992_aligned_seg0_1_2hits.root
-#/volatile/halla/moller12gev/asar/GEMRootfiles/moller_uvagem_replayed_1729_aligned_seg0_1_all_seg_4Sigma_new_Nov11_all.root
-#/volatile/halla/moller12gev/asar/GEMRootfiles/moller_uvagem_replayed_2079_aligned_seg0_1_1_seg_4Sigma_Jan13.root
-#/volatile/halla/moller12gev/asar/GEMRootfiles/moller_uvagem_replayed_1859_aligned_seg0_1_all_seg_4Sigma_2nd_align_14Nov.root
-/volatile/halla/moller12gev/asar/GEMRootfiles/moller_uvagem_replayed_2091_5seg0_1_5Sigma_Feb8_4rdAlign_cutApp.root
+/volatile/halla/moller12gev/asar/GEMRootfiles/moller_uvagem_replayed_1859_aligned_seg0_1_all_seg_4Sigma_2nd_align_14Nov.root
 endlist
 prefix moller.uvagem
 nlayers 4
