@@ -8,15 +8,20 @@
 #include "TString.h"
 
 void replay_moller_gem( UInt_t runnum=1859, UInt_t firstsegment=0, UInt_t maxsegments=1, UInt_t firstevent=0, UInt_t nevents=1000){
-    MOLLERSpectrometer *moller = new MOLLERSpectrometer("mollerPol", "Generic apparatus");
-    MOLLERGEMSpectrometerTracker *polgem = new MOLLERGEMSpectrometerTracker("polgem", "4-layer cosmic test stand");
+
+  gSystem->Load("libMollerPol");
+
+
+  MollerPolApparatus *mol = new MollerPolApparatus("M", "Moller polarimeter apparatus");
+  gHaApps->Add(mol);
+
+//    MOLLERSpectrometer *moller = new MOLLERSpectrometer("mollerPol", "Generic apparatus");
+    MollerPolGEMSpectrometerTracker *polgem = new MollerPolGEMSpectrometerTracker("polgem", "4-layer cosmic test stand");
     
-    moller->AddDetector(polgem);
+    mol->AddDetector(polgem);
 
     THaAnalyzer* analyzer = new THaAnalyzer;
     
-    gHaApps->Add(moller);
-  
     THaEvent* event = new THaEvent;
     
     TString prefix = gSystem->Getenv("DATA_DIR");
@@ -36,6 +41,7 @@ void replay_moller_gem( UInt_t runnum=1859, UInt_t firstsegment=0, UInt_t maxseg
     TString codafilename;
 //    codafilename.Form( "%s/ssp_gem_apv_test_%d.evio.%d", prefix.Data(), runnum, segment );
     codafilename.Form( "%s/moller_ssp_%d.evio.%d", prefix.Data(), runnum, segment );
+    printf("data file: %s\n",codafilename.Data());
 
     segmentexists = true;
     

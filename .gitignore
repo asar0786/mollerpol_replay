@@ -1,8 +1,9 @@
-# outputs
-Rootfiles/
+data
+Rootfiles
 log/
 *.root
 *.log
+GEM_alignment_info_*.txt
 
 # editor / shell junk
 .*.swp
