@@ -1,0 +1,9 @@
+# Print debug information
+heldecoder.verbose = 1
+# helicity delay windows
+heldecoder.heldelay = 0
+# helicity decoder ROC ID
+heldecoder.rocid = 1
+# helicity decoder bank ID
+heldecoder.bankid = 3564
+

@@ -31,7 +31,7 @@ void replay(int run_number=0, int seg = 0, int nevents=-1,
   scaler->AddEvtType(1);
   gHaEvtHandlers->Add(scaler);
   //scaler->SetDebugFile("DebugScaler.txt");
-
+  
   // A simple event class to be output to the resulting tree.
   // Creating your own descendant of THaEvent is one way of
   // defining and controlling the output.
@@ -39,8 +39,6 @@ void replay(int run_number=0, int seg = 0, int nevents=-1,
   
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-//  THaRun* run = new THaRun( "prod12_4100V_TrigRate25_4.dat" );
-  //THaRun* run = new THaRun(Form("/adaqfs/home/hamoller/data/mollerpol_test_%d.evio.%d",run_number,seg) );
   THaRun* run = new THaRun(Form("/hamoller/data/raw/mollerpol_test_%d.evio.%d",run_number,seg) );
 
   run->SetFirstEvent(first_event);
@@ -56,6 +54,7 @@ void replay(int run_number=0, int seg = 0, int nevents=-1,
   analyzer->SetEvent( event );
   //analyzer->SetOutFile( Form("%s/fadcV2_moller_analyzer_%d.%d.root", gSystem->Getenv("HAMOLLER_ROOTFILE_DIR"),run_number,seg) );
   analyzer->SetOutFile( Form("%s/fadcV2_moller_analyzer_%d.%d.root", "/hamoller/data/Rootfiles",run_number,seg) );
+
   // File to record cuts accounting information
   analyzer->SetSummaryFile( Form("summary/summary_%d.log", run_number) ); // optional
   

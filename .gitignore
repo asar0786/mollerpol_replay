@@ -1,7 +1,25 @@
-*.log
-*.swp
 data
 Rootfiles
-*.txt
-fadcdebug.dat
-raw
+log/
+*.root
+*.log
+GEM_alignment_info_*.txt
+
+# editor / shell junk
+.*.swp
+*~
+.history/
+.viminfo
+.root_hist
+
+# cmake/build (if someone builds here)
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.so
+*.pcm
+*.rootmap
+

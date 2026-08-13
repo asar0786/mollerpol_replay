@@ -1,7 +1,7 @@
 # Date/Time = Fri July 26 17:50:14 2023
 --------[ 2023-02-26 17:50:14 ] ##test run
 
-ebeam      = 11.
+ebeam      = 0.
 mollerPol.theta    = 0.0
 mollerPol.pcentral = -1
 mollerPol.phi = -1
